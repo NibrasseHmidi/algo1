@@ -1,0 +1,22 @@
+ALGORITHM algo_checkpoint
+VAR
+    sentence: STRING;
+    lg: INTEGER:=0;
+    words: INTEGER:=1;
+    vowels: INTEGER:=0;
+
+BEGIN
+    Read(sentence);
+
+    WHILE (sentence[lg] <> ".") DO
+      IF (sentence[lg]=" ") THEN
+         words:=words+1
+      ELSE_IF (sentence[lg]="a","A","e","E","i","I","o","O","u","U","y","Y") THEN
+        vowels:=vowels+1; 
+      END_IF
+      lg:=lg-(words-1);
+    END_WHILE
+    Write("Length of the sentence : ",lg);
+    Write("Number of words : ",words);
+    Write("Number of vowels : ",vowels);
+END
